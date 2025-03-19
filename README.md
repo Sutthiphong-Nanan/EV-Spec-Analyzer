@@ -40,7 +40,7 @@ winget install --id Python.Python.3.13 --accept-package-agreements --accept-sour
 2. ติดตั้งไลบรารีที่จำเป็น
 
 ```bash
-pip install pandas numpy matplotlib ttkbootstrap
+pip install pandas numpy matplotlib ttkbootstrap PyMuPDF Pillow
 ```
 หรือ  Run Installer/install_library_EV-Spec-Analyzer.bat
 
