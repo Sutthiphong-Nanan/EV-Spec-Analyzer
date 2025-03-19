@@ -1,6 +1,6 @@
 @echo off
 
-set "packages=pandas numpy matplotlib ttkbootstrap"
+set "packages=pandas numpy matplotlib ttkbootstrap PyMuPDF Pillow"
 
 echo Installing packages...
 
