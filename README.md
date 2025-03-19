@@ -32,8 +32,8 @@ EV-Spec-Analyzer เป็นโปรแกรมจำลองสำหรั
 
 **วิธีที่ 1**
 
-- 1. เข้าไปในโฟลเดอร์ " EV-Spec-Analyzer "
-- 2. เปิดโปรแกรม " EV-Spec-Analyzer.exe "
+1. เข้าไปในโฟลเดอร์ " EV-Spec-Analyzer "
+2. เปิดโปรแกรม " EV-Spec-Analyzer.exe "
 
 **วิธีที่ 2**
 
