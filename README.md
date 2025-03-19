@@ -43,7 +43,7 @@ EV-Spec-Analyzer เป็นโปรแกรมจำลองสำหรั
 pip install pandas numpy matplotlib ttkbootstrap
 ```
 
-**2. รันโปรแกรม**
+**2. รันโปรแกรมในโฟลเดอร์ " EV-Spec-Analyzer-Source-Code "**
 
 ```bash
 python EV-Spec-Analyzer.py
