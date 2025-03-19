@@ -40,7 +40,7 @@ EV-Spec-Analyzer เป็นโปรแกรมจำลองสำหรั
 **1. ติดตั้ง Python**
 
 ```bash
-winget install --id Python.Python.3.13 -y
+winget install --id Python.Python.3.13 --accept-package-agreements --accept-source-agreements
 ```
 
 **2. ติดตั้งไลบรารีที่จำเป็น**
