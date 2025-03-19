@@ -37,13 +37,19 @@ EV-Spec-Analyzer เป็นโปรแกรมจำลองสำหรั
 
 **วิธีที่ 2**
 
-**1. ติดตั้งไลบรารีที่จำเป็น**
+**1. ติดตั้ง Python**
+
+```bash
+winget install --id Python.Python.3.13 -y
+```
+
+**2. ติดตั้งไลบรารีที่จำเป็น**
 
 ```bash
 pip install pandas numpy matplotlib ttkbootstrap
 ```
 
-**2. รันโปรแกรมในโฟลเดอร์ " EV-Spec-Analyzer-Source-Code "**
+**3. รันโปรแกรมในโฟลเดอร์ " EV-Spec-Analyzer-Source-Code "**
 
 ```bash
 python EV-Spec-Analyzer.py
