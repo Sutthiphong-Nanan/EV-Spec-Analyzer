@@ -45,7 +45,7 @@ pip install pandas numpy matplotlib ttkbootstrap
 **2. รันโปรแกรม**
 
 ```bash
-python EV_Spec_Analyzer.py
+python EV-Spec-Analyzer.py
 ```
 
 ## วิธีใช้งานโปรแกรม
