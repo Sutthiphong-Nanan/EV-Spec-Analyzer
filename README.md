@@ -58,6 +58,8 @@ python EV-Spec-Analyzer.py
 ```
 หรือ  Open with Python >> EV-Spec-Analyzer.py
 
+---
+
 ## วิธีใช้งานโปรแกรม
 
 1. **เลือกไฟล์ CSV** ที่มีข้อมูลเส้นทาง
