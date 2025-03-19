@@ -1,5 +1,3 @@
----
-
 # EV-Spec-Analyzer
 
 EV-Spec-Analyzer is a simulation program designed for analyzing and designing the specifications of electric vehicles (EV) using input route data in CSV file format along with various parameters to calculate motor size, battery capacity, and solar panel (PV) power if the vehicle is equipped.
