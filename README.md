@@ -37,7 +37,7 @@ EV-Spec-Analyzer เป็นโปรแกรมจำลองสำหรั
 
 **วิธีที่ 2**
 
-**1. ติดตั้ง Python**
+1. ติดตั้ง Python
 
 ```bash
 winget install --id Python.Python.3.13 --accept-package-agreements --accept-source-agreements
@@ -45,7 +45,7 @@ winget install --id Python.Python.3.13 --accept-package-agreements --accept-sour
 หรือ
 Run Installer/install_Python.bat
 
-**2. ติดตั้งไลบรารีที่จำเป็น**
+2. ติดตั้งไลบรารีที่จำเป็น
 
 ```bash
 pip install pandas numpy matplotlib ttkbootstrap
@@ -53,7 +53,7 @@ pip install pandas numpy matplotlib ttkbootstrap
 หรือ
 Run Installer/install_library_EV-Spec-Analyzer.bat
 
-**3. รันโปรแกรมในโฟลเดอร์ " EV-Spec-Analyzer-Source-Code "**
+3. รันโปรแกรมในโฟลเดอร์ " EV-Spec-Analyzer-Source-Code "
 
 ```bash
 python EV-Spec-Analyzer.py
