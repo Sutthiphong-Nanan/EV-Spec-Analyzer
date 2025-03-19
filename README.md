@@ -39,7 +39,7 @@ pip install pandas numpy matplotlib ttkbootstrap
 ### 2. รันโปรแกรม
 
 ```bash
-python EV_Simulater-v9.4.py
+python EV_Spec_Analyzer.py
 ```
 
 ### 3. ใช้งานโปรแกรม
