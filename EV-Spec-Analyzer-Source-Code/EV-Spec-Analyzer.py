@@ -1,7 +1,5 @@
 """
-EV Simulator Version 8.4
-
--เปลี่ยนเป็นภาษาอังกฤษ
+EV Simulator Version 8.5
 
 """
 import tkinter as tk
