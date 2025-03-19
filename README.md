@@ -122,6 +122,16 @@ EV-Spec-Analyzer calculates the energy consumption of an EV based on the specifi
 
 ---
 
+## Sample Screenshots
+
+### 1. Parameter Setup
+![Parameter Setup](images/parameter-setup.png)
+
+### 2. Calculation Results
+![Calculation Results](images/calculation-results.png)
+
+---
+
 # EV-Spec-Analyzer
 
 EV-Spec-Analyzer เป็นโปรแกรมจำลองสำหรับวิเคราะห์และออกแบบสเปคของยานยนต์ไฟฟ้า (EV) โดยใช้ข้อมูลเส้นทางที่ป้อนเข้าไปในรูปแบบไฟล์ CSV และพารามิเตอร์ต่างๆ เพื่อคำนวณขนาดมอเตอร์ ขนาดแบตเตอรี่ และพลังงานจากแผงโซลาร์เซลล์ (PV) หากรถมีการติดตั้ง
