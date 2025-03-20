@@ -51,7 +51,6 @@ or  Run Installer/install_library_EV-Spec-Analyzer.bat
 ```bash
 python EV-Spec-Analyzer-Source-Code/EV-Spec-Analyzer.py
 ```
-or  Open with Python >> EV-Spec-Analyzer-Source-Code/EV-Spec-Analyzer.py
 
 ---
 
