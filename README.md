@@ -185,7 +185,6 @@ pip install pandas numpy matplotlib ttkbootstrap PyMuPDF Pillow
 ```bash
 python EV-Spec-Analyzer-Source-Code/EV-Spec-Analyzer.py
 ```
-หรือ  Open with Python >> EV-Spec-Analyzer-Source-Code/EV-Spec-Analyzer.py
 
 ---
 
