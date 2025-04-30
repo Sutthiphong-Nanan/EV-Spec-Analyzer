@@ -53,7 +53,7 @@ if getattr(sys, 'frozen', False): # ถ้ารันจาก PyInstaller
     exe_folder = os.path.dirname(exe_path)
 
     # สร้าง path ที่ถูกต้องสำหรับไฟล์ PDF ที่ควรอยู่ในโฟลเดอร์เดียวกับ .exe
-    part_pdf_viewer = os.path.join(exe_folder, "pdf_viewer.py")
+    part_pdf_viewer = os.path.join(exe_folder, "pdf_viewer.exe")
     
 else:
     # ถ้ารันจาก source code, ใช้ตำแหน่งปัจจุบัน
