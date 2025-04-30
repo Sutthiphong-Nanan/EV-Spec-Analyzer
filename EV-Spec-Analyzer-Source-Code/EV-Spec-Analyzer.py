@@ -1,5 +1,7 @@
 """
-EV Simulator Version 8.5
+EV Simulator Version 9.5
+
+-เปลี่ยนให้ปุ่ม "help" run โปรแกรม pdf_viewer.py จากเดิมที่เป็น exe
 
 """
 import tkinter as tk
@@ -593,10 +595,10 @@ def calculation(data_route): #กดปุ่ม calculation
     Battery_size_with_PV = ((Total_power_with_PV / 3600) / 1000) - PV_run_charge  #หน่วยเป็น kWh
 
     #น้ำหนักแบตเตอรี่มาคำนวน pv
-    Battery_weight_with_PV = (Battery_size_with_PV * 1000  / 200)  #หน่วยเป็น kg
+    Battery_weight_with_PV = max(0, (Battery_size_with_PV * 1000  / 200))  #หน่วยเป็น kg
     
     #น้ำหนักแบตเตอรี่ไม่มี pv
-    Battery_weight_nonPV = (Battery_size_nonPV * 1000  / 200)  #หน่วยเป็น kg
+    Battery_weight_nonPV = max(0, (Battery_size_nonPV * 1000  / 200))  #หน่วยเป็น kg
     
     #เวลาที่ใช้ในการชาร์จแบตเตอรี่เต็ม
     Time_Full_charge = ((Battery_size_nonPV / 7) * 60) * 60 #ขนาดกำลังไฟฟ้าในการชาร์จแบตเตอรี่เต็ม 3.5 kWH
@@ -848,7 +850,7 @@ def plot_graph(x, y, x_name, y_name, title, label_graph, etc_X, etc_Y,etc_status
 
 # สร้างหน้าต่างหลัก
 window = tkb.Window(themename=set_theme)
-window.title('EV Spec Analyzer')
+window.title('EV Spec Analyzer 1.0.0')
 window.geometry('1460x768')
 window.resizable(1, 1)
 window.option_add('*font', 'tahoma 10')
