@@ -32,7 +32,7 @@ EV-Spec-Analyzer is a simulation program designed for analyzing and designing th
 
 ## Installation
 
-1. Install Python
+1. Install Python or https://github.com/Sutthiphong-Nanan/EV-Spec-Analyzer/releases/tag/v1.0.0
 
 ```bash
 winget install --id Python.Python.3.13 --accept-package-agreements --accept-source-agreements
