@@ -1,7 +1,7 @@
 """
 EV Simulator Version 10.1
 
--แก้ไขคำผิด
+-run pdf_viewer form .py
 
 """
 import tkinter as tk
