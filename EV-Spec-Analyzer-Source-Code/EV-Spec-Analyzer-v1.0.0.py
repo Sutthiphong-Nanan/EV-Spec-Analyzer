@@ -1,7 +1,7 @@
 """
-EV Simulator Version 10.1
+EV Simulator Version 10.2
 
--run pdf_viewer form .py
+-run pdf_viewer.py
 
 """
 import tkinter as tk
@@ -55,7 +55,7 @@ if getattr(sys, 'frozen', False): # ถ้ารันจาก PyInstaller
     exe_folder = os.path.dirname(exe_path)
 
     # สร้าง path ที่ถูกต้องสำหรับไฟล์ PDF ที่ควรอยู่ในโฟลเดอร์เดียวกับ .exe
-    part_pdf_viewer = os.path.join(exe_folder, "pdf_viewer.exe")
+    part_pdf_viewer = os.path.join(exe_folder, "pdf_viewer.py")
     
 else:
     # ถ้ารันจาก source code, ใช้ตำแหน่งปัจจุบัน
@@ -1200,7 +1200,7 @@ label_Ro.grid(row=0, column=0, padx=5, pady=5)
 entry_Ro = tkb.Entry(label_frame2_F_aero, width=5)
 entry_Ro.insert(0, 1.22)
 entry_Ro.grid(row=0, column=1, padx=5, pady=5, sticky='w')
-label_Ro_unit = tkb.Label(label_frame2_F_aero, text='kg/m²')
+label_Ro_unit = tkb.Label(label_frame2_F_aero, text='kg/m³')
 label_Ro_unit.grid(row=0, column=2, padx=5, pady=5, sticky='w')
 
 label_A = tkb.Label(label_frame2_F_aero, text='    A:')
