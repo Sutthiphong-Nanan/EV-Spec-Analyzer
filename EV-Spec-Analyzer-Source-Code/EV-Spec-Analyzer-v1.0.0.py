@@ -617,7 +617,7 @@ def calculation(data_route): #กดปุ่ม calculation
     Battery_weight_nonPV = (Battery_size_nonPV * 1000  / 200)  #หน่วยเป็น kg
     
     #เวลาที่ใช้ในการชาร์จแบตเตอรี่เต็ม
-    Time_Full_charge = ((Battery_size_nonPV / 7) * 60) * 60 #ขนาดกำลังไฟฟ้าในการชาร์จแบตเตอรี่เต็ม 3.5 kWH
+    Time_Full_charge = ((Battery_size_nonPV / float(entry_charge.get())) * 60) * 60 #ขนาดกำลังไฟฟ้าในการชาร์จแบตเตอรี่เต็ม 3.5 kWH
     Time_Full_charge_cc = (Time_Full_charge * 0.8) #เวลาที่ใช้ในการชาร์จแบตเตอรี่ แบบ cc 80%
     Time_Full_charge_cv = (Time_Full_charge * 0.2) * 2 #เวลาที่ใช้ในการชาร์จแบตเตอรี่ แบบ cv 20% โดยข้อยๆจ่ายไฟเข้าจะทำให้ใช้เวลา 2 เท่า
     Time_Full_charge_all = Time_Full_charge_cc + Time_Full_charge_cv #เวลาที่ใช้ในการชาร์จแบตเตอรี่ 80% + 20%
@@ -628,7 +628,7 @@ def calculation(data_route): #กดปุ่ม calculation
     Time_Full_charge_with_PV_cv = (Time_Full_charge_with_PV * 0.2) * 2 #เวลาที่ใช้ในการชาร์จแบตเตอรี่ แบบ cv 20% โดยข้อยๆจ่ายไฟเข้าจะทำให้ใช้เวลา 2 เท่า
     Time_Full_charge_with_PV_all = Time_Full_charge_with_PV_cc + Time_Full_charge_with_PV_cv #เวลาที่ใช้ในการชาร์จแบตเตอรี่ 80% + 20%
     
-    pv_time_charge = (( pv_power_run_charge ) * time_charge_pv )/1000 #เวลาที่ใช้ในการชาร์จแบตเตอรี่ด้วยโซล่าเชลล์
+    pv_time_charge = (( pv_power_run_charge ) * 1 )/1000 #เวลาที่ใช้ในการชาร์จแบตเตอรี่ด้วยโซล่าเชลล์
     
     #ส่วนการแสดงข้อมูล
     #labelframe_tab2_1 สเปคขัันต่ำของรถ
@@ -645,7 +645,7 @@ def calculation(data_route): #กดปุ่ม calculation
     labelframe_N_motor_motor = tkb.Label(scrollframe_tab2_info_result_scroll, text='Motor Speed: {:,.3f} rpm'.format(float(N_motor_max)))
     labelframe_N_motor_motor.grid(row=3, column=0, sticky="w", padx=10)
 
-    labelframe_power_PV = tkb.Label(scrollframe_tab2_info_result_scroll, text='PV Energy (Run): {:,.3f} kWh'.format(float(PV_run_charge)))
+    labelframe_power_PV = tkb.Label(scrollframe_tab2_info_result_scroll, text='Total PV Energy (Run): {:,.3f} kWh'.format(float(PV_run_charge)))
     labelframe_power_PV.grid(row=4, column=0, sticky="w", padx=10)
 
     Label_Battery_size_non = tkb.Label(scrollframe_tab2_info_result_scroll, text ='Battery Size without PV: {:,.3f} kWh'.format(float(Battery_size_nonPV)))
@@ -666,20 +666,20 @@ def calculation(data_route): #กดปุ่ม calculation
     Label_Net_power_withPV = tkb.Label(scrollframe_tab2_info_result_scroll, text = 'Rated Discharge with PV: {:,.3f} kW'.format(float(Net_power_point_max_withPV)))
     Label_Net_power_withPV.grid(row=5, column=1, sticky="w", padx=10 )
 
-    Label_Time_pv_charge = tkb.Label(scrollframe_tab2_info_result_scroll, text ='PV Energy Charge / Hour: {:,.3f} kWh'.format((pv_time_charge)))
+    Label_Time_pv_charge = tkb.Label(scrollframe_tab2_info_result_scroll, text ='PV Energy Charge (Run) / Hour: {:,.3f} kWh'.format((pv_time_charge))) #pv วิ่ง * ชม
     Label_Time_pv_charge.grid(row=2, column=2, sticky="w", padx=10)
     
     min_charge = int(Time_Full_charge_all//60)
     sec_charge = int(Time_Full_charge_all % 60)   
-    Label_Time_Full_charge = tkb.Label(scrollframe_tab2_info_result_scroll, text ='Time to Full Charge without PV: {0} min {1} sec'.format(min_charge, sec_charge ))
+    Label_Time_Full_charge = tkb.Label(scrollframe_tab2_info_result_scroll, text ='Time to Full Charge without PV ({2}kW Charger): {0} min {1} sec'.format(min_charge, sec_charge, float(entry_charge.get()))) # 7kw/hr
     Label_Time_Full_charge.grid(row=0, column=2, sticky="w", padx=10)
     
     min_charge_with_PV = int(Time_Full_charge_with_PV_all//60)
     sec_charge_with_PV = int(Time_Full_charge_with_PV_all % 60)
-    Label_Time_Full_charge_with_PV = tkb.Label(scrollframe_tab2_info_result_scroll, text='Time to Full Charge with PV (Stop Run): {0} min {1} sec'.format(min_charge_with_PV, sec_charge_with_PV))
+    Label_Time_Full_charge_with_PV = tkb.Label(scrollframe_tab2_info_result_scroll, text='Time to Full Charge with PV (Power PV Run): {0} min {1} sec'.format(min_charge_with_PV, sec_charge_with_PV))
     Label_Time_Full_charge_with_PV.grid(row=1, column=2, sticky="w", padx=10)
     
-    Label_PV_stop_charge = tkb.Label(scrollframe_tab2_info_result_scroll, text='PV Energy Charge / Hour (Stop Run): {:,.3f} kWh'.format(float(PV_stop_charge)))
+    Label_PV_stop_charge = tkb.Label(scrollframe_tab2_info_result_scroll, text='Total PV Energy (Stop Run): {:,.3f} kWh'.format(float(PV_stop_charge))) #pv หยุด * ชม
     Label_PV_stop_charge.grid(row=3, column=2, sticky="w", padx=10)
 
     #Tooltip
@@ -883,7 +883,7 @@ def plot_graph(x, y, x_name, y_name, title, label_graph, etc_X, etc_Y,etc_status
 # สร้างหน้าต่างหลัก
 window = tkb.Window(themename=set_theme)
 window.title('EV Spec Analyzer 1.0.0')
-window.geometry('1630x768')
+window.geometry('1730x768')
 window.resizable(1, 1)
 window.option_add('*font', 'tahoma 10')
 
@@ -931,11 +931,11 @@ label_frame2_F_aero = tkb.LabelFrame(scrollframe_label_frame2, text='Aerodynamic
 label_frame2_F_aero.grid_propagate(False)
 label_frame2_F_aero.grid(row=1, column=0, padx=5, pady=5)
 
-label_frame2_general = tkb.LabelFrame(scrollframe_label_frame2, text='General variables',width=700, height=120)
+label_frame2_general = tkb.LabelFrame(scrollframe_label_frame2, text='General variables',width=700, height=160)
 label_frame2_general.grid_propagate(False)
 label_frame2_general.grid(row=0, column=0, pady=5, padx=5)
 
-label_frame2_moter = tkb.LabelFrame(scrollframe_label_frame2, text='Motor Efficiency / Inverter Efficiency / Number of Rounds',width=620, height=265)
+label_frame2_moter = tkb.LabelFrame(scrollframe_label_frame2, text='Motor Efficiency / Inverter Efficiency / Number of Rounds',width=620, height=300)
 label_frame2_moter.grid_propagate(False)
 label_frame2_moter.grid(row=0, column=1, rowspan=2, sticky="n", padx=5, pady=5)
 
@@ -1095,7 +1095,6 @@ entry_acc.grid(row=0, column=7, padx=5, pady=5)
 label_acc_unit = tkb.Label(label_frame2_general, text='m/s²')
 label_acc_unit.grid(row=0, column=8, padx=5, pady=5)
 
-
 label_R = tkb.Label(label_frame2_general, text='R:')
 label_R.grid(row=1, column=0, padx=5, pady=5)
 entry_R = tkb.Entry(label_frame2_general, width=5)
@@ -1119,6 +1118,14 @@ entry_brake_acc.insert(0, -1)
 entry_brake_acc.grid(row=1, column=7, padx=5)
 label_brake_acc_unit = tkb.Label(label_frame2_general, text='m/s²')
 label_brake_acc_unit.grid(row=1, column=8, padx=5)
+
+label_charge = tkb.Label(label_frame2_general, text='Charger:')
+label_charge.grid(row=2, column=0, padx=5, pady=5)
+entry_charge = tkb.Entry(label_frame2_general, width=5)
+entry_charge.insert(0, 7)
+entry_charge.grid(row=2, column=1, padx=5, pady=5)
+label_charge_unit = tkb.Label(label_frame2_general, text='kW')
+label_charge_unit.grid(row=2, column=2, padx=5, sticky='w')
 
 #label_frame2_F_PV
 G_pv_label = tkb.Label(label_frame2_F_PV, text="Irradiance (Run):")
