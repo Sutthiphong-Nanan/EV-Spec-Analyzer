@@ -74,7 +74,8 @@ python EV-Spec-Analyzer-Source-Code/EV-Spec-Analyzer.py
 | `start_acc`   | m/s² | Maximum acceleration rate |
 | `brake_acc`   | m/s² | Maximum braking rate      |
 | `dt`          | sec  | Time interval for each frame |
-| `run_turn`    | round | Number of laps to run     |
+| `run_turn`    | round| Number of laps to run     |
+| `Charger`    | kW    | Charger power             |
 
 ### Route and Road Condition Parameters
 
